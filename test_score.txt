@@ -1,0 +1,6 @@
+test_name_1	56
+test_name_2	46
+test_name_3	36
+test_name_4	26
+test_name_5	16
+test_name_6	6

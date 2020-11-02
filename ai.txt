@@ -1,0 +1,21 @@
+Did you attempt to make your computer player very smart -- i.e., do something more clever than just pick a random legal move?
+If so, were you able to accomplish this? Is your computer player as smart as you would like?
+How did you determine which piece to play next? Tell us about your “pick next move” algorithm
+How often did your computer program beat you, or your friends, or whoever tested it out for you?
+How would you improve it in the future?
+
+1. My current program uses method of randomly choosing a column in the disk matrix, ranging from [0, COLUMN - 1], to place the AI side disk. It will be a legal move for AI side.
+2. Not ideally, my computer player is not as smart as the ideal player in this case. 
+3. It will first generates a random column index, and it will then check if the rows in that column are already full. If it is full, it will pass the column and seeks for a new column index. If not full, it will call AI side to place the yellow disk.
+4. Based on current condition, I would win most of the time. 
+5. Yes, I have thought about some additional ways to further improve the program. 
+    1. The idea is about looping through the matrix and identify every single legal move for the AI disk.
+    2. The looping is very similar to check the winning status as currently defined in Class Check_Win. 
+        (1) To avoid impact the current real matrix, will create a copy of the current matrix, and loop the copied one.
+    3. For every possible legal move, for instance, K possible moves, it will call a method to give every possible move a score.
+    4. There would have four different senerios, after similuating and placing the possible AI side disk:
+        (1). 4 continuous AI side disks -------> score 100
+        (2). 3 continuous AI side disks and an empty space besides them -------> score 60
+        (3). 2 continuous AI side disks and two empty space besides them -------> score 20
+        (4). 3 continuous human side disks and an empty space besides them -------> score -10
+    5. For the K possible legal moves, each will has a score. Then AI side will place the disk to the move with best score.
